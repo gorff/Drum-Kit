@@ -47,8 +47,11 @@ function playSound(letter){
     default: console.log(buttonInnerHTML) // logs an exception for a broken buttonInnerHTML
   }
 }
-function buttonAnimation()
+function buttonAnimation(currentKey)
 {
   var activeButton = document.querySelector('.'+currentKey);
-  activeButton.addClass('pressed');
+  activeButton.classList.add('pressed');
+  setTimeout(function(){
+    activeButton.classList.remove('pressed')
+  }, 100);
 }
